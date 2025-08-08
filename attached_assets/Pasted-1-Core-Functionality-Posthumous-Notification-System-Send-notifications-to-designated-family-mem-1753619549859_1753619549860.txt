@@ -1,0 +1,139 @@
+1. Core Functionality
+
+Posthumous Notification System: Send notifications to designated family members/nominees after admin approval of the user's death, containing details of assets such as:
+Funds (bank accounts, investments, etc.)
+Fixed Deposits (FDs)
+Physical properties (real estate, vehicles, etc.)
+Lended money (details of loans given to others)
+Bank account details
+Cryptocurrency holdings
+
+
+Asset-Specific Contact Details:
+Allow users to assign a unique mobile number and email ID for each asset added.
+These contact details can be used for asset-specific notifications or verification.
+
+Asset Information Storage:
+Users can input and maintain asset details during their lifetime.
+Storage options for asset data:
+Google Drive
+DigiLocker
+Local server
+
+
+Users can select their preferred storage location before saving data.
+Ensure secure encryption for all stored asset information.
+
+
+
+2. Well-Being Alerts
+
+Configurable Alerts:
+Users can set the frequency of well-being check alerts on their mobile device (e.g., daily, weekly).
+Alerts prompt users to confirm their status with options:
+"I'm Okay": Resets the alert counter to zero.
+"Cancel": No action taken, alert counter continues.
+
+
+
+
+Non-Response Handling:
+If the user fails to respond to alerts after the maximum set limit (configurable by the user), the app does not send notifications to nominees directly.
+Instead, an alert is sent to the admin team for further action.
+Customer care contacts the nominee(s) to re-validate the user's status (e.g., confirm death).
+Notifications to nominees are sent only after admin approval via the admin portal.
+
+
+
+3. User Registration
+
+Nominee Management:
+Users must add nominee(s) during registration for re-validation purposes in case of non-response or suspected death.
+Nominees are contacted by customer care for verification, not directly for asset notifications unless approved by admin.
+Option to update nominee details post-registration.
+
+
+Secure Registration:
+Implement secure user authentication (e.g., email/password, biometrics, or OAuth).
+Verify user identity to prevent unauthorized access.
+
+
+
+4. Admin Panel
+
+Admin Dashboard:
+graph for visuals
+Accessible to admin users to monitor all registered users.
+Display real-time alert status for each user (e.g., alert frequency, last response, counter status).
+View user registration details (without accessing sensitive asset information unless authorized).
+Option to manage user accounts (e.g., suspend, deactivate, or notify users).
+
+
+Death Validation Workflow:
+When a user fails to respond to the maximum number of alerts, admins receive a notification.
+Admins can view the user's nominee details and initiate contact via customer care for re-validation.
+Provide an interface for admins to approve or reject the sending of asset notifications to nominees after validation.
+Log all validation and approval actions for audit purposes.
+
+
+
+5. Platform Compatibility
+
+Cross-Platform Support:
+Develop a responsive app compatible with:
+Android (mobile app)
+iOS (mobile app)
+Web (browser-based, responsive design for desktop and mobile)
+
+
+Ensure consistent UI/UX across all platforms.
+
+6. User profile setting menus
+
+
+6. Security and Privacy
+
+Data Security:
+Encrypt all sensitive data (asset details, user information, contact details) during storage and transmission.
+Use secure APIs for integration with Google Drive and DigiLocker.
+
+
+Privacy Controls:
+Allow users to control access to their data.
+Ensure nominees only receive asset information after admin approval following validation.
+Restrict nominee access to re-validation purposes only until admin approval.
+
+7. Registration page: It should be mandatory with user's mobile number, however email id is also mandatory. Password setup also should follow standard way, also include captcha on registration and login.
+
+i want to break it into two pages , like first one should take basic information of user and mobile number, and in next page it should ask to enter email id and captcha and password thing. Also when user login after registration then OTP login should given priority, and OTP should be sent to mobile and email id both.
+
+8. Technical Requirements
+
+Frontend:
+Use modern frameworks (e.g., React Native for mobile, React for web) to ensure cross-platform compatibility.
+Implement responsive design with Tailwind CSS for styling.
+
+
+Backend:
+Develop a secure backend to handle user data, alerts, and notifications (e.g., Node.js).
+Integrate with Google Drive and DigiLocker APIs for storage.
+Use a database (e.g., PostgreSQL, MongoDB) for local server storage.
+
+
+Notification System:
+Implement push notifications for mobile apps (using Firebase or similar).
+Use email/SMS for admin alerts and nominee notifications (post-approval).
+
+
+Alert Logic:
+Backend logic to track alert frequency, user responses, and trigger conditions for admin notifications.
+Workflow for admin approval before nominee notifications.
+
+
+
+9. User Experience
+
+Intuitive Interface:
+Simple form-based interface for entering and updating asset details, including mobile number and email ID for each asset.
+Clear options for selecting storage location and alert frequency.
+User-friendly well-being alert prompts with prominent "I'm Okay" and "Cancel" buttons.
